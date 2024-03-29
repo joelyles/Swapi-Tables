@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+
+import Layout from "./Layout";
+import People from "./People";
+import Planets from "./Planets";
+import Starships from "./Starships";
+
 
 function App() {
+  const url = "https://swapi.dev/api/people/1"
+  const [people, setPeople] = useState('');
+
+  useEffect(() => {
+    const getSwapi = async () => {
+      try {
+        const response = await fetch(url);
+      } catch (err) {
+        console.log(err);
+      }
+      getSwapi();
+    }
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route path="/" element={<People people={people} setPeople={setPeople} />}/>
+        <Route path="/planets" element={<Planets />}/>
+        <Route path="/starships" element={<Starships />}/>
+      </Route>
+     </Routes>
     </div>
   );
 }

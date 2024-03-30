@@ -1,12 +1,14 @@
+import Table from "./Table";
 
-
-const People = ({ people }) => {
+const People = ({ items, setItems }) => {
   return (
-    <div className="main">
+    <>
+      <div className="main">
       <h2>One day or another...</h2>
       <p>a grid of people from Starwars will be here.</p>
-      <p>{people}</p>
-    </div>
+      <Table items={items} />
+      </div>
+    </>
   )
 }
 

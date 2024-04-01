@@ -8,7 +8,7 @@ const Table = ({ items }) => {
       <table>
         
         <tbody>
-          {Object.entries(items).map((item, index) => {
+          {Object.values(items.results).map((item, index) => {
             return (
             <Row key={index} item={item} />
             )
@@ -22,3 +22,5 @@ const Table = ({ items }) => {
 }
 
 export default Table
+
+// the above returns a grid, but with the error "Table.js:10 Uncaught TypeError: Cannot convert undefined or null to object"

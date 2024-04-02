@@ -4,7 +4,7 @@ import Button from './Button';
 const Nav = ({ reqType, setReqType }) => {
   return (
     <>
-    <form onSubmit={(e) => e.preventDefault()}>
+{/*     <form onSubmit={(e) => e.preventDefault()}>
       <Button 
         buttonText="people"
         reqType={reqType}
@@ -21,7 +21,7 @@ const Nav = ({ reqType, setReqType }) => {
         setReqType={setReqType}
       />
     </form>
-
+ */}
     <div>
       <ul className="nav">
         <li><Link className="link" to="/">People</Link></li>

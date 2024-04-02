@@ -1,8 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import axios from "axios";
-
 import Layout from "./Layout";
 import People from "./People";
 import Planets from "./Planets";
@@ -10,12 +6,12 @@ import Starships from "./Starships";
 
 
 function App() {
-  const API_URL = "https://swapi.dev/api/people/"
+/*   const API_URL = "https://swapi.dev/api/people/"
   const [items, setItems] = useState([]);
-  const [reqType, setReqType] = useState('people');
+  const [reqType, setReqType] = useState('people'); */
  
 
-  useEffect(() => {
+/*   useEffect(() => {
     const getSwapi = async () => {
       try {
         const response = await fetch(`${API_URL}`);
@@ -29,7 +25,7 @@ function App() {
       }
     }
     getSwapi();
-  }, [reqType])
+  }, [reqType]) */
 
 /*    useEffect(() => {
     const peopleArray = Object.entries(items).filter(item => (item.name));
@@ -40,7 +36,7 @@ function App() {
     <div className="App">
      <Routes>
       <Route path='/' element={<Layout />}>
-        <Route index element={<People items={items}  />}/>
+        <Route index element={<People />}/>
         <Route path="/planets" element={<Planets />}/>
         <Route path="/starships" element={<Starships />}/>
       </Route>

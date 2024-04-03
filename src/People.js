@@ -1,8 +1,7 @@
 // helped by https://upmostly.com/tutorials/how-to-display-json-data-in-react-table
 
-import React, { useEffect } from "react";
-import Table from "./Table";
-import { useState } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 
 function People() {
   const API_URL = "https://swapi.dev/api/people/"
@@ -31,8 +30,7 @@ function People() {
   return (
     <>
       <div>
-      <h2>One day or another...</h2>
-      <p>a grid of people from Starwars will be here.</p>
+      <h2>Grid of People from Star Wars</h2>
       </div>
       <table className="main">
         <tbody className="table-body">

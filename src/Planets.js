@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import React from "react";
+import { useEffect, useState } from "react";
 
 function Planets() {
   const API_URL = "https://swapi.dev/api/planets"
@@ -11,7 +11,7 @@ const getPlanets = async () => {
   const response = await fetch(API_URL);
   const data = await response.json();
   const planetsArray = Object.values(data.results);
-  console.log(planetsArray);
+  /* console.log(planetsArray); */
   setItems(planetsArray);
   } catch (err) {
     console.log(err);
@@ -25,8 +25,7 @@ useEffect(() => {
   return (
     <>
      <div>
-      <h2>Sooner or later...</h2>
-      <p>a grid of star wars planets will go here.</p>
+      <h2>Grid of Planets from Star Wars</h2>
     </div>
     <table className="main">
       <tbody>

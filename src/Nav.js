@@ -1,27 +1,8 @@
 import { Link } from "react-router-dom";
-import Button from './Button';
 
-const Nav = ({ reqType, setReqType }) => {
+const Nav = () => {
   return (
     <>
-{/*     <form onSubmit={(e) => e.preventDefault()}>
-      <Button 
-        buttonText="people"
-        reqType={reqType}
-        setReqType={setReqType}
-      />
-      <Button 
-        buttonText="planets"
-        reqType={reqType}
-        setReqType={setReqType}
-      />
-      <Button 
-        buttonText="starships"
-        reqType={reqType}
-        setReqType={setReqType}
-      />
-    </form>
- */}
     <div>
       <ul className="nav">
         <li><Link className="link" to="/">People</Link></li>

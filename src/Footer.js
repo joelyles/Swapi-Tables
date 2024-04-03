@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div>
+    <div className="footer" >
       <p>created using The Star Wars API</p>
     </div>
   )

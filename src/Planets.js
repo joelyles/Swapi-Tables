@@ -24,18 +24,18 @@ useEffect(() => {
 
   return (
     <>
-     <div>
-      <h2>Grid of Planets from Star Wars</h2>
-    </div>
     <table className="main">
-      <tbody>
+      <caption>Grid of Planets from Star Wars</caption>
+      <thead>
         <tr>
-          <th>name</th>
-          <th>population</th>
-          <th>climate</th>
-          <th>terrain</th>
-          <th>orbital peroid</th>
+          <th className="planet-col" scope="col">name</th>
+          <th className="planet-col" scope="col">population</th>
+          <th className="planet-col" scope="col">climate</th>
+          <th className="planet-col" scope="col">terrain</th>
+          <th className="planet-col" scope="col">orbital peroid</th>
         </tr>
+      </thead>
+      <tbody className="table-body" >
         {items.map((item, index) => (
           <tr key={index}>
             <td>{item.name}</td>

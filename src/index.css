@@ -4,20 +4,16 @@
   box-sizing: border-box;
 }
 
-body {
+.layout {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* height: 100vh; */
+  height: 100vh;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  border: 1px solid papayawhip;
   background-color: #363932;
   color: #EBECE9;
 }
 
-.layout {
-  height: 100vh;
-}
 
 .header {
   display: flex;
@@ -29,12 +25,23 @@ body {
 }
 
 .footer {
-  display: flex;
-  
+  padding: 2%;
+  margin: 1%;
+  font-style: italic;
 }
+
+.hlink {
+  text-decoration: none;
+  color: #EBECE9;
+}
+
 .link {
   text-decoration: none;
   color: #EBECE9;
+}
+
+.link:hover {
+  transform: scale(104%);
 }
 
 .nav {
@@ -48,16 +55,94 @@ li {
   margin: 12px;
 }
 
-.main {
-  /* border: 1px solid #EBECE9; */
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+caption {
+  padding: 2%;
+  letter-spacing: 2px;
 }
 
-td {
+.table-body {
   border: 1px solid #EBECE9;
-  padding: 5px;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  height: 90%;
+  overflow: auto;
+}
+
+table {
+  border: 1px solid #EBECE9;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  overflow: hidden;
+}
+
+/* people table spacing */
+thead th:nth-child(1) {
+  width: 20%;
+}
+thead th:nth-child(2) {
+  width: 15%;
+}
+thead th:nth-child(3) {
+  width: 15%;
+}
+thead th:nth-child(4) {
+  width: 25%;
+}
+thead th:nth-child(5) {
+  width: 25%;
+}
+
+/* planets table spacing */
+thead .planet-col:nth-child(1) {
+  width: 15%;
+}
+thead .planet-col:nth-child(2) {
+  width: 25%;
+}
+thead .planet-col:nth-child(3) {
+  width: 20%;
+}
+thead .planet-col:nth-child(4) {
+  width: 20%;
+}
+thead .planet-col:nth-child(5) {
+  width: 20%;
+}
+
+/* starships table spacing */
+thead .starship-col:nth-child(1) {
+  width: 15%;
+}
+thead .starship-col:nth-child(2) {
+  width: 15%;
+}
+thead .starship-col:nth-child(3) {
+  width: 15%;
+}
+thead .starship-col:nth-child(4) {
+  width: 15%;
+}
+thead .starship-col:nth-child(5) {
+  width: 20%;
+}
+thead .starship-col:nth-child(6) {
+  width: 20%;
+}
+
+th, td {
+  border: 1px solid #EBECE9;
+  padding: 10px;
   font-size: 12px;
+}
+
+th {
+  text-align: left;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }

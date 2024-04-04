@@ -23,19 +23,19 @@ useEffect(() => {
 
   return (
     <>
-      <div>
-        <h2>Grid of Starships from Star Wars</h2>
-      </div>
       <table className="main">
-        <tbody>
+        <caption>Grid of Starships from Star Wars</caption>
+        <thead>
           <tr>
-            <th>name</th>
-            <th>model</th>
-            <th>manufacturer</th>
-            <th>hyperdrive rating</th>
-            <th>cargo capacity</th>
-            <th>cost in credits</th>
+            <th className="starship-col" scope="col">name</th>
+            <th className="starship-col" scope="col">model</th>
+            <th className="starship-col" scope="col">manufacturer</th>
+            <th className="starship-col" scope="col">hyperdrive rating</th>
+            <th className="starship-col" scope="col">cargo capacity</th>
+            <th className="starship-col" scope="col">cost in credits</th>
           </tr>
+          </thead>
+          <tbody className="table-body">
           {items.map((item, index) => (
             <tr key={index}>
               <td>{item.name}</td>

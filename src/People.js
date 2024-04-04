@@ -29,18 +29,18 @@ function People() {
 
   return (
     <>
-      <div>
-      <h2>Grid of People from Star Wars</h2>
-      </div>
       <table className="main">
-        <tbody className="table-body">
+        <caption>Grid of People from Star Wars</caption>
+        <thead>
           <tr>
-            <th>name</th>
-            <th>height</th>
-            <th>mass</th>
-            <th>eye color</th>
-            <th>birth year</th>
+            <th scope="col">name</th>
+            <th scope="col">height</th>
+            <th scope="col">mass</th>
+            <th scope="col">eye color</th>
+            <th scope="col">birth year</th>
           </tr>
+        </thead>
+          <tbody className="table-body">
           {items.map((item, index) => (
             <tr key={index}>
               <td>{item.name}</td>

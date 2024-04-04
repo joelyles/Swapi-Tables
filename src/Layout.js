@@ -8,7 +8,9 @@ const Layout = () => {
     <div className="layout">
       <Header title="SWAPI Tables"/>
       <Nav />
-      <Outlet />
+        <div className="table-body">
+          <Outlet />
+        </div>
       <Footer />
     </div>
   )

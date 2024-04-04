@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 function People() {
   const API_URL = "https://swapi.dev/api/people/"
   const [items, setItems] = useState([]);
+  const [search, setSearch] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   
   const getPeople = async () => {
@@ -25,6 +27,12 @@ function People() {
   useEffect(() => {
   getPeople();
   }, []);
+
+  useEffect(() => {
+    const searchedPeople = items.filter(item => ((item.name).includes(search)));
+
+    setSearchResults(searchedPeople);
+  }, [items, search]);
 
 
   return (

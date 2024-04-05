@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Nav = ({ search, setSearch }) => {
+const Nav = () => {
   return (
     <>
     <div>
@@ -9,11 +9,6 @@ const Nav = ({ search, setSearch }) => {
         <Link className="link" to="/planets"><li>Planets</li></Link>
         <Link className="link" to="/starships"><li>Starships</li></Link>
       </ul>
-      <form className="search-bar" onSubmit={(e) => e.preventDefault()}>
-        <input type="text" id="search" placeholder="search table..."
-          value={search} onChange={(e) => setSearch(e.target.value)}
-        />
-      </form>
     </div>
     </>
   )

@@ -29,7 +29,7 @@ function People() {
   }, []);
 
   useEffect(() => {
-    const searchedPeople = items.filter(item => ((item.name).includes(search)));
+    const searchedPeople = items.filter(item => ((item.name.toLowerCase()).includes(search.toLowerCase())));
 
     setSearchResults(searchedPeople);
   }, [items, search]);
@@ -37,6 +37,12 @@ function People() {
 
   return (
     <>
+        <h5>name search</h5>
+        <form className="search-bar" onSubmit={(e) => e.preventDefault()}>
+          <input type="text" id="search" placeholder="search for name..."
+            value={search} onChange={(e) => setSearch(e.target.value)}
+        />
+      </form>
       <table className="main">
         <caption>Grid of People from Star Wars</caption>
         <thead>
@@ -49,7 +55,7 @@ function People() {
           </tr>
         </thead>
           <tbody className="table-body">
-          {items.map((item, index) => (
+          {searchResults.map((item, index) => (
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.height}</td>

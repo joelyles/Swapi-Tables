@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 function Starships() {
   const API_URL = "https://swapi.dev/api/starships";
   const [items, setItems] = useState([]);
+  const [search, setSearch] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
 const getStarships = async () => {
   try {
@@ -21,8 +23,19 @@ useEffect(() => {
   getStarships();
 }, []);
 
+useEffect(() => {
+  const searchedStarships = items.filter(item => (item.name.toLowerCase()).includes(search.toLowerCase()));
+
+  setSearchResults(searchedStarships)
+}, [items, search]);
+
   return (
     <>
+      <h5>startship name search</h5>
+      <form className="search-bar" onChange={(e) => e.preventDefault()}>
+        <input type="text" name="search starships" id="search" placeholder="search startship name..." 
+        value={search} onChange={(e) => setSearch(e.target.value)} />
+      </form>
       <table className="main">
         <caption>Grid of Starships from Star Wars</caption>
         <thead>
@@ -36,7 +49,7 @@ useEffect(() => {
           </tr>
           </thead>
           <tbody className="table-body">
-          {items.map((item, index) => (
+          {searchResults.map((item, index) => (
             <tr key={index}>
               <td>{item.name}</td>
               <td>{item.model}</td>

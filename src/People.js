@@ -39,7 +39,7 @@ function People() {
     <>
         <h5>name search</h5>
         <form className="search-bar" onSubmit={(e) => e.preventDefault()}>
-          <input type="text" id="search" placeholder="search for name..."
+          <input type="text" id="search" placeholder="search name..."
             value={search} onChange={(e) => setSearch(e.target.value)}
         />
       </form>
